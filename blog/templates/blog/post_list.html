@@ -1,6 +1,6 @@
 <html>
         <div>
-            <h1><a href="/">Django Girls Blog</a></h1>
+            <h1><a href="/">手紙の代わりがてらのホームページ</a></h1>
         </div>
 <!--
 {% for post in posts %}
@@ -13,8 +13,15 @@
     <div>
         <h2><a href="">{{ post.title }}</a></h2>
         <p>{{ post.text|linebreaksbr }}</p>
-        <p>published: {{ post.published_date }}</p>
+        <p>公開日: {{ post.published_date }}</p>
     </div>
 {% endfor %}
+<!--
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+        <p>published: {{ post.published_date }}</p>
+コメントアウ
+-->
+
     </body>
 </html>
