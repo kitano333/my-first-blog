@@ -1,21 +1,31 @@
+{% load static %}
+<!--  CSSを追加したことをHTMLテンプレートに教える -->
 <html>
-        <div>
-            <h1><a href="/">お姉さんへの報告blog</a></h1>
+    <head>
+        <title>my blog</title>
+　　　　　<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+　　　　　<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+　　　　　<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    </head>
+<!--
+Bootstrap をインストールするため、.html ファイル (blog/templates/blog/post_list.html) をコードエディタで開き <head> の中にこれを追加
+-->
+        <div class="page-header">
+            <h1><a href="/" style="pointer-events: none;">お姉さんへの報告blog</a></h1>
         </div>
 <!--
-{% for post in posts %}
-    {{ post }}
-{% endfor %}
+style="pointer-events: none; クリックできないようにする。
 コメントアウ
 -->
 
 {% for post in posts %}
-    <div>
-        <h2><a href="">{{ post.title }}</a></h2>
+    <div class="post">
+        <h2><a href="" style="pointer-events: none;">{{ post.title }}</a></h2>
         <p>{{ post.text|linebreaksbr }}</p>
         <p>公開日: {{ post.published_date }}</p>
     </div>
 {% endfor %}
+
 <!--
         <h2><a href="">{{ post.title }}</a></h2>
         <p>{{ post.text|linebreaksbr }}</p>
